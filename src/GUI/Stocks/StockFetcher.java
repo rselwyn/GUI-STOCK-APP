@@ -27,11 +27,11 @@ public class StockFetcher {
 		double dayhigh = 0.0;
 		double movingav50day = 0.0;
 		double marketcap = 0.0;
-	
+		String name = "";
 		try { 
 			
 			// Retrieve CSV File
-			URL yahoo = new URL("http://finance.yahoo.com/d/quotes.csv?s="+ symbol + "&f=l1vr2ejkghm3j3");
+			URL yahoo = new URL("http://finance.yahoo.com/d/quotes.csv?s="+ symbol + "&f=l1vr2ejkghm3j3n");
 			URLConnection connection = yahoo.openConnection(); 
 			InputStreamReader is = new InputStreamReader(connection.getInputStream());
 			BufferedReader br = new BufferedReader(is);  
@@ -53,6 +53,7 @@ public class StockFetcher {
 			dayhigh = sh.handleDouble(stockinfo[7]);   
 			movingav50day = sh.handleDouble(stockinfo[8]);
 			marketcap = sh.handleDouble(stockinfo[9]);
+			name = stockinfo[10];
 			
 		} catch (IOException e) {
 			Logger log = Logger.getLogger(StockFetcher.class.getName()); 
@@ -60,7 +61,7 @@ public class StockFetcher {
 			return null;
 		}
 		
-		return new Stock(sym, price, volume, pe, eps, week52low, week52high, daylow, dayhigh, movingav50day, marketcap);
+		return new Stock(sym, price, volume, pe, eps, week52low, week52high, daylow, dayhigh, movingav50day, marketcap, name);
 		
 	}
 }

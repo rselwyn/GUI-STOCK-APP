@@ -1,7 +1,7 @@
 package GUI.Stocks;
 
 public class Stock { 
-	
+	private String name;
 	private String symbol; 
 	private double price;
 	private int volume;
@@ -15,7 +15,7 @@ public class Stock {
 	private double marketcap;
 	
 	public Stock(String symbol, double price, int volume, double pe, double eps, double week52low,      
-					double week52high, double daylow, double dayhigh, double movingav50day, double marketcap) {	
+					double week52high, double daylow, double dayhigh, double movingav50day, double marketcap, String name) {	
 		this.symbol = symbol; 
 		this.price = price;	
 		this.volume = volume; 
@@ -27,6 +27,7 @@ public class Stock {
 		this.dayhigh = dayhigh; 
 		this.movingav50day = movingav50day; 
 		this.marketcap = marketcap;
+		this.name = name;
 	} 
 	
 	public String getSymbol() { 
@@ -72,4 +73,8 @@ public class Stock {
 	public double getMarketcap() { 
 		return this.marketcap;
 	} 
+	
+	public String getFullName(){
+		return this.name;
+	}
 }
