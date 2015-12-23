@@ -8,36 +8,37 @@ import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 public class Manager extends JFrame{
-	private JTextField textField;
-	private JPanel contentPane;
+	
 	public Manager() {
-		GridBagLayout gridBagLayout = new GridBagLayout();
-		gridBagLayout.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0, 0};
-		gridBagLayout.rowHeights = new int[]{0, 0, 0, 0};
-		gridBagLayout.columnWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
-		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, Double.MIN_VALUE};
-		getContentPane().setLayout(gridBagLayout);
 		
-		JLabel lblStockMarketTracker = new JLabel("Stock Market Tracker App");
-		GridBagConstraints gbc_lblStockMarketTracker = new GridBagConstraints();
-		gbc_lblStockMarketTracker.insets = new Insets(0, 0, 5, 0);
-		gbc_lblStockMarketTracker.gridx = 6;
-		gbc_lblStockMarketTracker.gridy = 0;
-		contentPane.add(lblStockMarketTracker, gbc_lblStockMarketTracker);
+		getContentPane().setLayout(new GridLayout(2, 1, 0, 0));
 		
-		JLabel lblTickerSymbol = new JLabel("Ticker Symbol:");
-		GridBagConstraints gbc_lblTickerSymbol = new GridBagConstraints();
-		gbc_lblTickerSymbol.insets = new Insets(0, 0, 0, 5);
-		gbc_lblTickerSymbol.gridx = 2;
-		gbc_lblTickerSymbol.gridy = 2;
-		contentPane.add(lblTickerSymbol, gbc_lblTickerSymbol);
+		JPanel panel_1 = new JPanel();
+		getContentPane().add(panel_1);
 		
-		JLabel lblticker = new JLabel("#TICKER");
-		GridBagConstraints gbc_lblticker = new GridBagConstraints();
-		gbc_lblticker.insets = new Insets(0, 0, 0, 5);
-		gbc_lblticker.gridx = 3;
-		gbc_lblticker.gridy = 2;
-		contentPane.add(lblticker, gbc_lblticker);
+		JPanel panel = new JPanel();
+		getContentPane().add(panel);
+		GridBagLayout gbl_panel = new GridBagLayout();
+		gbl_panel.columnWidths = new int[]{0, 0, 0, 0};
+		gbl_panel.rowHeights = new int[]{0, 0, 0};
+		gbl_panel.columnWeights = new double[]{0.0, 0.0, 0.0, Double.MIN_VALUE};
+		gbl_panel.rowWeights = new double[]{0.0, 0.0, Double.MIN_VALUE};
+		panel.setLayout(gbl_panel);
+		
+		JLabel lblTicker = new JLabel("Ticker:");
+		GridBagConstraints gbc_lblTicker = new GridBagConstraints();
+		gbc_lblTicker.insets = new Insets(0, 0, 5, 0);
+		gbc_lblTicker.gridx = 2;
+		gbc_lblTicker.gridy = 0;
+		panel.add(lblTicker, gbc_lblTicker);
+		
+		JLabel lblPrice = new JLabel("Price:");
+		GridBagConstraints gbc_lblPrice = new GridBagConstraints();
+		gbc_lblPrice.gridx = 2;
+		gbc_lblPrice.gridy = 1;
+		panel.add(lblPrice, gbc_lblPrice);
+		
+	
 		
 	}
 
