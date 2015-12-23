@@ -1,6 +1,5 @@
 package GUI;
 
-import javax.swing.JFrame;
 import java.awt.GridLayout;
 import javax.swing.*;
 import java.awt.BorderLayout;
@@ -10,8 +9,8 @@ import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 public class Manager extends JFrame{
-	
-	public Component Manager() {
+	private Container mPanel;
+	public Manager() {
 		
 		getContentPane().setLayout(new GridLayout(2, 1, 0, 0));
 		
@@ -27,7 +26,7 @@ public class Manager extends JFrame{
 		JButton btnBack = new JButton("Back");
 		GridBagConstraints gbc_btnBack = new GridBagConstraints();
 		gbc_btnBack.insets = new Insets(0, 0, 0, 5);
-		gbc_btnBack.gridx = 0;
+		gbc_btnBack.gridx = 1;
 		gbc_btnBack.gridy = 0;
 		panel_1.add(btnBack, gbc_btnBack);
 		
@@ -151,8 +150,12 @@ public class Manager extends JFrame{
 		gbc_lblvol.gridy = 3;
 		panel.add(lblvol, gbc_lblvol);
 		
-		return getContentPane();
+		mPanel = getContentPane();
+		
 		
 	}
-
+	
+	public Container getCPane(){
+		return this.mPanel;
+	}
 }
