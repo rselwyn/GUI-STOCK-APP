@@ -31,14 +31,14 @@ public class Manager extends JFrame{
 		
 		JButton btnBack = new JButton("Back");
 		GridBagConstraints gbc_btnBack = new GridBagConstraints();
-		gbc_btnBack.insets = new Insets(0, 0, 0, 5);
+		gbc_btnBack.insets = new Insets(0, 10, 0, 5);
 		gbc_btnBack.gridx = 1;
 		gbc_btnBack.gridy = 0;
 		panel_1.add(btnBack, gbc_btnBack);
 		
 		JLabel lblfullName = new JLabel("#FULL NAME");
 		GridBagConstraints gbc_lblfullName = new GridBagConstraints();
-		gbc_lblfullName.insets = new Insets(0, 0, 0, 5);
+		gbc_lblfullName.insets = new Insets(0, 120, 0, 5);
 		gbc_lblfullName.gridx = 4;
 		gbc_lblfullName.gridy = 0;
 		panel_1.add(lblfullName, gbc_lblfullName);
